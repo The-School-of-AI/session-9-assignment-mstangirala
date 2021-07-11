@@ -7,6 +7,7 @@ import re
 import random
 import string
 from datetime import date
+pip install Faker
 
 #time function to calculate the run time of a function
 def timed(func):
