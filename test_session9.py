@@ -1,12 +1,12 @@
 import pytest
 import random
-import Session_9
+import session9
 import os
 import inspect
 import re
 import math
 
-from Session_9 import *
+from session9 import *
 
 
 README_CONTENT_CHECK_FOR = ['namedtuple', 'profile', 'dictionary', 
@@ -45,14 +45,14 @@ def test_readme_file_for_formatting():
 def test_indentations():
     ''' Returns pass if used four spaces for each level of syntactically \
     significant indenting.'''
-    lines = inspect.getsource(Session_9)
+    lines = inspect.getsource(session9)
     spaces = re.findall('\n +.', lines)
     for space in spaces:
         assert len(space) % 4 == 2, "Your script contains misplaced indentations"
         assert len(re.sub(r'[^ ]', '', space)) % 4 == 0, "Your code indentation does not follow PEP8 guidelines" 
 
 def test_function_name_had_cap_letter():
-    functions = inspect.getmembers(Session_9, inspect.isfunction)
+    functions = inspect.getmembers(session9, inspect.isfunction)
     for function in functions:
         assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
 
@@ -60,7 +60,7 @@ def test_function_doc_string():
     '''
     Test case to check whether the functions have docstrings or not.
     '''
-    functions = inspect.getmembers(Session_9, inspect.isfunction)
+    functions = inspect.getmembers(session9, inspect.isfunction)
     for function in functions:
         assert function[1].__doc__
 
