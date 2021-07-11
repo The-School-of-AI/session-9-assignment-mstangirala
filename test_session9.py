@@ -5,7 +5,6 @@ import os
 import inspect
 import re
 import math
-pip install Faker
 
 from Session_9 import *
 
